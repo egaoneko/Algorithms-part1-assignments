@@ -1,0 +1,7 @@
+# IDE
+.idea
+out
+*.iml
+
+# Mac
+.DS_Store
