@@ -10,7 +10,7 @@ public class Percolation {
     private final int blocks;
     private int openSitesSize = 0;
 
-    Percolation(int gridSize) { // create gridSize-by-gridSize grid, with all sites blocked
+    public Percolation(int gridSize) { // create gridSize-by-gridSize grid, with all sites blocked
         if (gridSize < 1) {
             throw new IllegalArgumentException("Invalid grid size : " + gridSize);
         }

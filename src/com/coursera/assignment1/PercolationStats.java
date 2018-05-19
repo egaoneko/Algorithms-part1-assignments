@@ -14,7 +14,7 @@ public class PercolationStats {
     private final double mean;
     private final double stddev;
 
-    PercolationStats(int n, int trials) { // perform trials independent experiments on an n-by-n grid
+    public PercolationStats(int n, int trials) { // perform trials independent experiments on an n-by-n grid
         if (n < 1) {
             throw new IllegalArgumentException("Invalid n : " + n);
         }
