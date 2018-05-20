@@ -2,6 +2,7 @@
 .idea
 out
 *.iml
+*.class
 
 # Mac
 .DS_Store
