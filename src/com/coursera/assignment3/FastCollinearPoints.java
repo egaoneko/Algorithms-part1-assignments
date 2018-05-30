@@ -20,11 +20,11 @@ public class FastCollinearPoints {
     private LineSegment[] getSegments(Point[] points) {
         Map<String, LineSegment> map = new HashMap<>();
 
-        int pointSize = points.length;
+        int len = points.length;
         for (Point p : points) {
-            Point[] copiedPoints = Arrays.copyOf(points, pointSize);
+            Point[] copiedPoints = Arrays.copyOf(points, len);
             Set<Point> set = new HashSet<>();
-            Arrays.sort(copiedPoints, Comparator.comparingDouble(p::slopeTo));
+            Arrays.sort(copiedPoints, p.slopeOrder());
 
             double prevSlope = 0;
             Point prevPoint = null;
@@ -72,14 +72,6 @@ public class FastCollinearPoints {
 
     private boolean isAbleSlope(double slope) {
         if (slope == Double.NEGATIVE_INFINITY) {
-            return false;
-        }
-
-        if (slope == Double.POSITIVE_INFINITY) {
-            return false;
-        }
-
-        if (slope == 0.0) {
             return false;
         }
 
