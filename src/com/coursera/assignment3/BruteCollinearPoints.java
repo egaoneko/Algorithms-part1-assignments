@@ -39,6 +39,10 @@ public class BruteCollinearPoints {
                             continue;
                         }
 
+                        if (!this.isAbleSlope(slopePQ)) {
+                            continue;
+                        }
+
                         if (map.containsKey(slopePQ)) {
                             continue;
                         }
@@ -55,8 +59,20 @@ public class BruteCollinearPoints {
         return map.values().toArray(new LineSegment[0]);
     }
 
-    private boolean isSelfPoint(double slope) {
-        return slope == Double.NEGATIVE_INFINITY;
+    private boolean isAbleSlope(double slope) {
+        if (slope == Double.NEGATIVE_INFINITY) {
+            return false;
+        }
+
+        if (slope == Double.POSITIVE_INFINITY) {
+            return false;
+        }
+
+        if (slope == 0.0) {
+            return false;
+        }
+
+        return true;
     }
 
     public int numberOfSegments() { // the number of line segments

@@ -9,9 +9,8 @@ import java.util.List;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class BruteCollinearPointsTest {
-
-    private BruteCollinearPoints bruteCollinearPoints;
+public class FastCollinearPointsTest {
+    private FastCollinearPoints fastCollinearPoints;
     private static Point[] POINTS;
 
     @Before
@@ -28,25 +27,25 @@ public class BruteCollinearPointsTest {
         points.add(new Point(5, 1));
 
         POINTS = points.toArray(new Point[0]);
-        this.bruteCollinearPoints = new BruteCollinearPoints(POINTS);
+        this.fastCollinearPoints = new FastCollinearPoints(POINTS);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testBruteCollinearPoints_InvalidNull_ExceptionThrown() {
-        new BruteCollinearPoints(null);
+    public void testFastCollinearPoints_InvalidNull_ExceptionThrown() {
+        new FastCollinearPoints(null);
     }
 
     @Test
     public void testNumberOfSegments() {
-        assertThat(this.bruteCollinearPoints.numberOfSegments(), is(2));
+        assertThat(this.fastCollinearPoints.numberOfSegments(), is(2));
     }
 
     @Test
     public void testSegments() {
-        LineSegment[] actualSegments = this.bruteCollinearPoints.segments();
+        LineSegment[] actualSegments = this.fastCollinearPoints.segments();
 
         assertThat(actualSegments.length, is(2));
-        assertThat(actualSegments[0].toString(), is(new LineSegment(POINTS[0], POINTS[3]).toString()));
-        assertThat(actualSegments[1].toString(), is(new LineSegment(POINTS[7], POINTS[5]).toString()));
+        assertThat(actualSegments[0].toString(), is(new LineSegment(POINTS[0], POINTS[4]).toString()));
+        assertThat(actualSegments[1].toString(), is(new LineSegment(POINTS[8], POINTS[5]).toString()));
     }
 }
