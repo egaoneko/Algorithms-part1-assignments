@@ -45,7 +45,7 @@ public class FastCollinearPointsTest {
         LineSegment[] actualSegments = this.fastCollinearPoints.segments();
 
         assertThat(actualSegments.length, is(2));
-        assertThat(actualSegments[0].toString(), is(new LineSegment(POINTS[0], POINTS[4]).toString()));
-        assertThat(actualSegments[1].toString(), is(new LineSegment(POINTS[8], POINTS[5]).toString()));
+        assertThat(actualSegments[0].toString(), is("(1, 1) -> (5, 5)"));
+        assertThat(actualSegments[1].toString(), is("(5, 1) -> (1, 5)"));
     }
 }

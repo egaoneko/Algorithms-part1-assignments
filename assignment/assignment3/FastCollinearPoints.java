@@ -1,5 +1,3 @@
-package com.coursera.assignment3;
-
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdOut;
@@ -103,7 +101,6 @@ public class FastCollinearPoints {
 
         // read the n points from a file
         In in = new In(args[0]);
-//        In in = new In("/collinear/input6.txt");
         int n = in.readInt();
         Point[] points = new Point[n];
         for (int i = 0; i < n; i++) {

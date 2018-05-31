@@ -1,5 +1,3 @@
-package com.coursera.assignment3;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,8 +14,7 @@ public class BruteCollinearPoints {
     }
 
     private LineSegment[] getSegments(Point[] points) {
-        List<LineSegment> segmentList;
-        segmentList = new ArrayList<>();
+        List<LineSegment> segmentList = new ArrayList<>();
         int len = points.length;
         Arrays.sort(points);
 
